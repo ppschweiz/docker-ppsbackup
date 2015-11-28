@@ -7,7 +7,7 @@ mkdir -p /backup/mysql-1-p/
 rsync -av mysql-1-p.piratenpartei.ch:/var/backup/* /backup/mysql-1-p/
 
 # create monthbackup
-if [ $(date %d) -eq 01 ]; then
+if [ $(date +%d) -eq 01 ]; then
   mkdir -p /backup/mysql-1-p/monatssicherung/
   find /backup/mysql-1-p/mysql -type f -ctime -1 -exec cp {} /backup/mysql-1-p/monatssicherung/
 
